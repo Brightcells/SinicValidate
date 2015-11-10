@@ -1,0 +1,2 @@
+# SinicValidate
+Validate Sinic Phone
