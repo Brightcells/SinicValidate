@@ -36,15 +36,26 @@ class SinicValidate(object):
         self.ChinaTelcom = r'^(?:133|153|177|18[019])\d{8}$'  # 1349号段 电信方面没给出答复，视作不存在
         self.OtherTelphone = r'^170([059])\d{7}$'  # 其他运营商
 
-    def phone(self, ph):
+        self.email_regex = r'^.+@([^.@][^@]+)$'
+
+    def phone(self, message, china_mobile=None, china_union=None, china_telcom=None, other_telphone=None):
+        """
+        Validates a phone number.
+        :param message:
+        :param china_mobile:
+        :param china_union:
+        :param china_telcom:
+        :param other_telphone:
+        :return:
+        """
         isChinaMobile = isChinaUnion = isChinaTelcom = isOtherTelphone = False
-        if re.match(self.ChinaMobile, ph):
+        if re.match(china_mobile or self.ChinaMobile, message):
             isChinaMobile = True
-        elif re.match(self.ChinaUnion, ph):
+        elif re.match(china_union or self.ChinaUnion, message):
             isChinaUnion = True
-        elif re.match(self.ChinaTelcom, ph):
+        elif re.match(china_telcom or self.ChinaTelcom, message):
             isChinaTelcom = True
-        elif re.match(self.OtherTelphone, ph):
+        elif re.match(other_telphone or self.OtherTelphone, message):
             isOtherTelphone = True
         return {
             'isPhone': isChinaMobile or isChinaUnion or isChinaTelcom or isOtherTelphone,
@@ -54,7 +65,17 @@ class SinicValidate(object):
             'isOtherTelphone': isOtherTelphone,
         }
 
+    def email(self, message, regex=None):
+        """
+        Validates an email address.
+        :param message:
+        :param regex:
+        :return:
+        """
+        return re.match(regex or self.email_regex, message)
+
 
 # For backwards compatibility
 _global_instance = SinicValidate()
 phone = _global_instance.phone
+email = _global_instance.email

@@ -2,7 +2,7 @@
 SinicValidate
 =============
 
-Validate Sinic Phone
+Validate Sinic Phone & Email
 
 Refer: http://www.oschina.net/code/snippet_238351_48624
 
@@ -47,4 +47,14 @@ Usage
      'isPhone': False}
 
     In [4]:
+
+
+Method
+======
+
+::
+
+    def phone(self, message, china_mobile=None, china_union=None, china_telcom=None, other_telphone=None):
+
+    def email(self, message, regex=None):
 

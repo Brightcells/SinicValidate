@@ -4,14 +4,14 @@ from __future__ import with_statement
 from setuptools import setup
 
 
-version = '1.0.1'
+version = '1.0.2'
 
 
 setup(
     name='SinicValidate',
     version=version,
     keywords='',
-    description="Validate Sinic Phone",
+    description="Validate Sinic Phone & Email",
     long_description=open('README.rst').read(),
 
     url='https://github.com/Brightcells/SinicValidate',
