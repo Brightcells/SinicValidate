@@ -1,2 +1,2 @@
 # SinicValidate
-Validate Sinic Phone
+Validate Sinic Phone & Email & etc

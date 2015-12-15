@@ -2,7 +2,7 @@
 SinicValidate
 =============
 
-Validate Sinic Phone & Email
+Validate Sinic Phone & Email & etc
 
 Refer: http://www.oschina.net/code/snippet_238351_48624
 
