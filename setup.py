@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import with_statement
 from setuptools import setup
 
 
@@ -11,7 +10,7 @@ setup(
     name='SinicValidate',
     version=version,
     keywords='',
-    description="Validate Sinic Phone & Email & etc",
+    description='Validate Sinic Phone & Email & etc',
     long_description=open('README.rst').read(),
 
     url='https://github.com/Brightcells/SinicValidate',
