@@ -52,6 +52,22 @@ class SinicValidate(object):
         return re.match(regex or self.email_regex, message)
 
 
-_global_instance = SinicValidate()
-phone = _global_instance.phone
-email = _global_instance.email
+class SinicSimpleValidate(object):
+    def __init__(self):
+        self.phone_regex = r'^1\d{10}$'
+
+    def phone(self, message, regex=None):
+        """
+        Simple validates a phone number.
+        :param message:
+        :param regex:
+        :return:
+        """
+        return re.match(regex or self.phone_regex, message)
+
+
+validate = SinicValidate()
+phone = validate.phone
+email = validate.email
+
+simple = SinicSimpleValidate()

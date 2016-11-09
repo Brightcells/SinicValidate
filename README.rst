@@ -28,7 +28,7 @@ Usage
     help      -> Python's own help system.
     object?   -> Details about 'object', use 'object??' for extra details.
 
-    In [1]: import SinicValidate as validate
+    In [1]: from SinicValidate import validate, simple
 
     In [2]: validate.phone('15171459560')
     Out[2]:
@@ -54,7 +54,12 @@ Method
 
 ::
 
-    def phone(self, message, china_mobile=None, china_union=None, china_telcom=None, other_telphone=None):
+    validate
+        def phone(self, message, china_mobile=None, china_union=None, china_telcom=None, other_telphone=None):
 
-    def email(self, message, regex=None):
+        def email(self, message, regex=None):
+
+
+    simple
+        def phone(self, message, regex=None):
 
